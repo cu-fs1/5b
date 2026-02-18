@@ -10,6 +10,7 @@ const studentSchema = new mongoose.Schema(
     roll: {
       type: Number,
       required: true,
+      unique: true,
     },
   },
   {
