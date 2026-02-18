@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Students</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: sans-serif; background: #f5f5f5; color: #333; padding: 2rem; }
+    h1 { margin-bottom: 1.5rem; }
+    form { display: flex; gap: 0.5rem; margin-bottom: 1.5rem; }
+    input { padding: 0.5rem 0.75rem; border: 1px solid #ccc; border-radius: 4px; font-size: 1rem; }
+    button { padding: 0.5rem 1rem; border: none; border-radius: 4px; cursor: pointer; font-size: 1rem; }
+    .btn-add  { background: #4caf50; color: #fff; }
+    .btn-edit { background: #2196f3; color: #fff; }
+    .btn-del  { background: #f44336; color: #fff; }
+    table { width: 100%; border-collapse: collapse; background: #fff; border-radius: 6px; overflow: hidden; box-shadow: 0 1px 4px rgba(0,0,0,.1); }
+    th, td { padding: 0.75rem 1rem; text-align: left; border-bottom: 1px solid #eee; }
+    th { background: #fafafa; font-weight: 600; }
+    tr:last-child td { border-bottom: none; }
+    .actions { display: flex; gap: 0.4rem; }
+    .error { color: #f44336; margin-bottom: 1rem; }
+  </style>
+</head>
+<body>
+
+  <h1>Students</h1>
+
+  <% if (locals.error) { %>
+    <p class="error"><%= error %></p>
+  <% } %>
+
+  <!-- Add student form -->
+  <form action="/view/students" method="POST">
+    <input type="text"   name="name" placeholder="Name"        required />
+    <input type="number" name="roll" placeholder="Roll number" required />
+    <button type="submit" class="btn-add">Add</button>
+  </form>
+
+  <!-- Students table -->
+  <table>
+    <thead>
+      <tr><th>Roll</th><th>Name</th><th>Actions</th></tr>
+    </thead>
+    <tbody>
+      <% students.forEach(s => { %>
+        <tr>
+          <td><%= s.roll %></td>
+          <td><%= s.name %></td>
+          <td class="actions">
+            <!-- Edit -->
+            <form action="/view/students/<%= s._id %>/edit" method="GET" style="display:inline">
+              <button class="btn-edit">Edit</button>
+            </form>
+            <!-- Delete -->
+            <form action="/view/students/<%= s._id %>?_method=DELETE" method="POST" style="display:inline">
+              <button class="btn-del" onclick="return confirm('Delete this student?')">Delete</button>
+            </form>
+          </td>
+        </tr>
+      <% }) %>
+      <% if (students.length === 0) { %>
+        <tr><td colspan="3" style="text-align:center;color:#999">No students yet.</td></tr>
+      <% } %>
+    </tbody>
+  </table>
+
+</body>
+</html>
