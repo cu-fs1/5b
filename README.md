@@ -1,5 +1,11 @@
 ﻿# 🎓 Student Management System - Project Guide
 
+## Starting the Project
+
+Students should first follow the experiment guide to proceed with the project
+
+- [Experiment 5 Guide](https://github.com/cu-fs1#experiment-5)
+
 Welcome to the **Student Management System** project! This repository contains a complete implementation of a CRUD (Create, Read, Update, Delete) application using Node.js, Express, MongoDB, and EJS.
 
 Instead of just looking at the code, use this guide to build the project from scratch yourself. Each section outlines a key component of the application.
