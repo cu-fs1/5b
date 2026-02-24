@@ -27,14 +27,14 @@ The project follows the **MVC (Model-View-Controller)** pattern, which helps org
 ## 🚀 Step-by-Step Implementation
 
 ### 1. Initialize the Project
-Create a new directory and initialize your Node project. You can use either `npm` or `pnpm` depending on your package manager:
+Create a new directory and initialize your Node project:
 ```bash
-npm init -y           # or `pnpm init -y`
+pnpm init -y
 ```
 Update `package.json` to use ES Modules by adding `"type": "module"`. Install the dependencies:
 ```bash
-npm install express mongoose ejs dotenv cors         # or `pnpm add express mongoose ejs dotenv cors`
-npm install --save-dev nodemon                      # or `pnpm add -D nodemon`
+pnpm add express mongoose ejs dotenv cors
+pnpm add -D nodemon
 ```
 
 ### 2. Set Up Environment Variables
@@ -90,7 +90,7 @@ Create `index.js` in the root. This is where you connect everything:
 
 ## 🧪 Testing Your Project
 
-1.  **Run the App**: `npm run dev` (if you added the script to `package.json`).
+1.  **Run the App**: `pnpm dev` (if you added the script to `package.json`).
 2.  **API**: Use Postman or Thunder Client to test the `/students` endpoints.
 3.  **UI**: Open `http://localhost:3000/view/students` in your browser.
 
