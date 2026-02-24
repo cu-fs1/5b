@@ -24,26 +24,17 @@ The project follows the **MVC (Model-View-Controller)** pattern, which helps org
 
 ---
 
-## 🛠️ Prerequisites
-
-Before you start, make sure you have the following installed:
--   [Node.js](https://nodejs.org/) (v16 or higher)
--   [MongoDB](https://www.mongodb.com/) (Local or MongoDB Atlas)
--   A code editor (like VS Code)
-
----
-
 ## 🚀 Step-by-Step Implementation
 
 ### 1. Initialize the Project
-Create a new directory and initialize your Node project:
+Create a new directory and initialize your Node project. You can use either `npm` or `pnpm` depending on your package manager:
 ```bash
-npm init -y
+npm init -y           # or `pnpm init -y`
 ```
 Update `package.json` to use ES Modules by adding `"type": "module"`. Install the dependencies:
 ```bash
-npm install express mongoose ejs dotenv cors
-npm install --save-dev nodemon
+npm install express mongoose ejs dotenv cors         # or `pnpm add express mongoose ejs dotenv cors`
+npm install --save-dev nodemon                      # or `pnpm add -D nodemon`
 ```
 
 ### 2. Set Up Environment Variables
